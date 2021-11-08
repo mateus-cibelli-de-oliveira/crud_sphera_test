@@ -1,20 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TableController;
 
 Route::middleware(['auth'])->group(function() {
 
+Route::delete('/delete', [ProductController::class, 'destroy'])->name('posts.destroy');
 
-Route::get('/show-tables', [PostController::class, 'index'])->name('posts.index');
+Route::get('/show-tables', [ProductController::class, 'showProduct'])->name('posts.show-tables');
 
-Route::get('/create-company', [PostController::class, 'createCompany'])->name('posts.createCompany');
-Route::post('/posts/create-company', [PostController::class, 'storeCompany'])->name('posts.storeCompany');
+Route::get('/create-company', [CompanyController::class, 'createCompany'])->name('posts.create-company');
+Route::post('/create-company', [CompanyController::class, 'storeCompany'])->name('posts.create-company');
 
-Route::get('/create-product', [PostController::class, 'createProduct'])->name('posts.createProduct');
-Route::post('/posts/create-product', [PostController::class, 'storeProduct'])->name('posts.storeProduct');
-
-Route::delete('/posts/delete', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::get('/create-product', [ProductController::class, 'createProduct'])->name('posts.create-product');
+Route::post('/create-product', [ProductController::class, 'storeProduct'])->name('posts.create-product');
 
 });
 

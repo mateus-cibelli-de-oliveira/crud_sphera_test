@@ -15,22 +15,22 @@ Listagem Geral
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">id</th>
         <th scope="col">Empresa</th>
         <th scope="col">Produto</th>
       </tr>
     </thead>
 <tbody>
-  @foreach ($companies as $postCompany && $products as $postProduct)
+  @foreach ($products as $product)
       <tr>
           <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-              #{{ $postCompany->name }}
+              {{ $product->company->name }}
           </td>   
           <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-              {{ $postProduct->name }}
+              {{ $product->name }}
           </td>
           <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5 text-right">
-            <a href="{{ route('posts.destroy', $postCompany->id, $postProduct->id) }}" class="px-5 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">Deletar</a>
+            <a href="{{ route('posts.destroy', $product->id) }}" class="px-5 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">Deletar</a>
           </td>
       </tr>
   @endforeach 

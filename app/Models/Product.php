@@ -9,9 +9,9 @@ class Product extends Model
 {
     protected $table = 'products';
 
-    protected $fillable = ['name', 'description', 'company_id'];
+    protected $fillable = ['name', 'description','company_id'];
 
-    public function Company()
+    public function company()
     {
         return $this->belongsTo(Company::class);
     } 

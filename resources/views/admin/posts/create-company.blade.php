@@ -13,7 +13,7 @@ Cadastrar Empresa
     <h1 class="d-flex justify-content-center text-3xl">Cadastrar Empresa</h1>
   </div>
   <div class="d-flex justify-content-center">
-    <form action="{{ route('/posts/create-company') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('posts.create-company') }}" method="post" enctype="multipart/form-data">
     @csrf
         <div class="form-row">
           <div class="form-group col-md-30">
