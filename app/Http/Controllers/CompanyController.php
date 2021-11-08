@@ -22,12 +22,11 @@ class CompanyController extends Controller
         Company::create($company);
     }
 
-    public function showCompany($id)
+    public function showCompany()
     {
-        if (!$company = Company::find($id)) 
-        {
-            return redirect()->route('admin.posts.show-tables',  compact('postCompany'));
-        } 
+        $company = Company::all(); 
+        return view('admin.posts.show-tables',  compact('companies'));
+        
     }
 
     public function destroy($id)
