@@ -18,12 +18,12 @@ Cadastrar Empresa
         <div class="form-row">
           <div class="form-group col-md-30">
             <label for="name" class="mt-1">Empresa</label>
-            <input type="text" class="form-control mt-1" id="name" name="name" placeholder="EspecializaTI" value="{{ $post->name ?? old('name') }}">
+            <input type="text" class="form-control mt-1" id="name" name="name" placeholder="EspecializaTI" value="{{ $postCompany->name ?? old('name') }}">
           </div>
           <div class="form-row">
             <div class="form-group col-md-30">
               <label for="telephone" class="mt-1">Telefone</label>
-              <input type="text" class="form-control mt-1" id="telephone" name="telephone" placeholder="(21)968-1423" value="{{ $post->telephone ?? old('telephone') }}" onkeypress="$(this).mask('(00) 0000-00009')">
+              <input type="text" class="form-control mt-1" id="telephone" name="telephone" placeholder="(21)968-1423" value="{{ $postCompany->telephone ?? old('telephone') }}" onkeypress="$(this).mask('(00) 0000-00009')">
             </div>
         <div class="form-row">
           <div class="form-group col-md-30">

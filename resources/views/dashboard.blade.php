@@ -16,7 +16,7 @@
             </div><br>
             <div class="p-6 bg-white border-b border-gray-200">
                 <button type="submit">
-                    <a href="{{ url('/posts/register-product') }}" class="no-underline"><b class="text-purple-600">Cadastrar Produto</b></a>
+                    <a href="{{ url('/create-product') }}" class="no-underline"><b class="text-purple-600">Cadastrar Produto</b></a>
                 </button>
             </div>
         </div>

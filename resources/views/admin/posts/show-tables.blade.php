@@ -21,34 +21,20 @@ Listagem Geral
       </tr>
     </thead>
 <tbody>
-  @foreach ($posts as $post)
+  @foreach ($companies as $postCompany && $products as $postProduct)
       <tr>
           <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-              #{{ $post->name }}
-          </td>
+              #{{ $postCompany->name }}
+          </td>   
           <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-              {{ $post->name_produto }}
+              {{ $postProduct->name }}
           </td>
-          <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{ $post->title }}</td>
           <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5 text-right">
-            <a href="{{ route('posts.destroy', $post->id) }}" class="px-5 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">Deletar</a>
+            <a href="{{ route('posts.destroy', $postCompany->id, $postProduct->id) }}" class="px-5 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">Deletar</a>
           </td>
       </tr>
-  @endforeach
+  @endforeach 
 </tbody>
-
-    {{-- <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>EspecializaTI</td>
-        <td>Curso de laravel</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Thower</td>
-        <td>NodeTypeScript</td>
-      </tr>
-    </tbody> --}}
 </table>
 
 @endsection

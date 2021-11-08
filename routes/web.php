@@ -1,19 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OneToOneController;
+use App\Http\Controllers\PostController;
 
 Route::middleware(['auth'])->group(function() {
 
-Route::get('/posts/create-company', [OneToOneController::class, 'OneToOneInsert'])->name('posts/create-company');
 
-Route::get('/posts/create', [OneToOneController::class, 'OneToOne'])->name('posts/create');
+Route::get('/show-tables', [PostController::class, 'index'])->name('posts.index');
 
-Route::get('/posts/register-product', [OneToOneController::class, 'OneToOneInsert'])->name('posts/register-product');
+Route::get('/create-company', [PostController::class, 'createCompany'])->name('posts.createCompany');
+Route::post('/posts/create-company', [PostController::class, 'storeCompany'])->name('posts.storeCompany');
 
-Route::get('/posts/register', [OneToOneController::class, 'OneToOne'])->name('posts/register');
+Route::get('/create-product', [PostController::class, 'createProduct'])->name('posts.createProduct');
+Route::post('/posts/create-product', [PostController::class, 'storeProduct'])->name('posts.storeProduct');
 
-Route::get('/posts/tables-end', [OneToOneController::class, 'OneToOne'])->name('posts/tables-end');
+Route::delete('/posts/delete', [PostController::class, 'destroy'])->name('posts.destroy');
 
 });
 
