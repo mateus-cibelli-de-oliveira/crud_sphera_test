@@ -18,14 +18,14 @@ Registrar Produto
         <div class="form-row">
           <div class="form-group col-md-30">
             <label for="name" class="mt-1">Produto</label>
-            <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Ferro de passar" value="{{ $->name ?? old('name') }}">
+            <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Ex: Ferro de passar" value="{{ $postProduct->name ?? old('name') }}">
           </div>
           <div class="form-row">
             <div class="form-group col-md-30">
               <label for="telephone" class="mt-1">Descrição</label>
-              <textarea type="text"  name="description" id="description" cols="30" rows="4" placeholder="Este produto é usado para..." class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">{{ $postProduct->description ?? old('description') }}</textarea>
+              <textarea type="text"  name="description" id="description" cols="30" rows="4" placeholder="Ex: Este produto está em perfeito estado" class="block w-full p-3 mt-2">{{ $postProduct->description ?? old('description') }}</textarea>
             </div>
-            <select name="company_id" id="company_id" class="form-control">
+            <select name="company_id" id="company_id" class="form-control mt-2">
               <option value="">- Selecione um curso -</option>
               @if ( isset($companies) )
                   @if ( count($companies) )

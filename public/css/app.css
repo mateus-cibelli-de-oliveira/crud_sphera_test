@@ -21765,6 +21765,11 @@ select {
   padding-left: 0.875rem;
   padding-right: 0.875rem;
 }
+.px-md-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 
 .py-0 {
   padding-top: 0px;
